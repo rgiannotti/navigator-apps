@@ -1,0 +1,14 @@
+.group.toaster {
+	li.toast[data-type='success'] {
+		@apply text-[#6aca7e] bg-[#e2f4e5] border-[#6aca7e] border-[0.5px];
+	}
+	li.toast[data-type='warning'] {
+		@apply text-[#ffb52b] bg-[#fff1d8] border-[#ffb52b] border-[0.5px];
+	}
+	li.toast[data-type='info'] {
+		@apply text-[#48acf3] bg-[#ddeefc] border-[#48acf3] border-[0.5px];
+	}
+	li.toast[data-type='error'] {
+		@apply text-[#ff8259] bg-[#ffe6df] border-[#ff8259] border-[0.5px];
+	}
+}

@@ -5,12 +5,12 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
-	},
-	css: {
-		preprocessorOptions: {
-			scss: {
-				additionalData: '@use "src/variables.scss" as *; @use "src/navigator.scss" as *;'
-			}
-		}
 	}
+	// css: {
+	// 	preprocessorOptions: {
+	// 		scss: {
+	// 			additionalData: '@use "src/variables.scss" as *; @use "src/navigator.scss" as *;'
+	// 		}
+	// 	}
+	// }
 })
