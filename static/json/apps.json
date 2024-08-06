@@ -3,36 +3,46 @@
 		"name": "Pokemon",
 		"url": "https://pokemon-support.trocdigital.io/pokemon",
 		"image": "https://front.trocdigital.io/assets/img/programs/pokemon/pokemon-home.png",
-		"tags": ["Production", "v3"]
+		"icon": "https://front.trocdigital.io/assets/img/programs/pokemon/icon.png",
+		"tags": ["Production", "v3"],
+		"like": true
 	},
 	{
 		"name": "We Support U",
 		"url": "https://weprotectu.trocdigital.io/we_protect_u",
 		"image": "https://front.trocdigital.io/assets/img/programs/we_protect_u/we_protect_u-home.png",
-		"tags": ["Production", "v3"]
+		"icon": "https://front.trocdigital.io/assets/img/programs/we_protect_u/icon.png",
+		"tags": ["Production", "v3"],
+		"like": true
 	},
 	{
 		"name": "Navigator v3",
 		"url": "https://navigator-new.dev.trocdigital.io/home",
 		"image": "https://front.trocdigital.io/assets/img/programs/tro_survey/tro_survey-home.png",
-		"tags": ["Develop", "v3"]
+		"icon": "https://front.trocdigital.io/assets/img/programs/tro_survey/icon.png",
+		"tags": ["Develop", "v3"],
+		"like": true
 	},
 	{
 		"name": "Navigator v2",
 		"url": "https://navigator.dev.trocdigital.io/home",
 		"image": "https://front.trocdigital.io/assets/img/programs/tro_survey/tro_survey-home.png",
+		"icon": "https://front.trocdigital.io/assets/img/programs/tro_survey/icon.png",
 		"tags": ["Develop", "v2"]
 	},
 	{
 		"name": "Chat AI",
 		"url": "https://navai.dev.trocdigital.io/auth",
 		"image": "https://front.trocdigital.io/assets/img/programs/smartjobs/smartjobs-home.png",
-		"tags": ["Develop", "ai"]
+		"icon": "https://front.trocdigital.io/assets/img/programs/smartjobs/icon.png",
+		"tags": ["Develop", "ai"],
+		"like": true
 	},
 	{
 		"name": "Chat AI",
 		"url": "https://navai.dev.trocdigital.io/auth",
 		"image": "https://front.trocdigital.io/assets/img/programs/smartjobs/smartjobs-home.png",
+		"icon": "https://front.trocdigital.io/assets/img/programs/smartjobs/icon.png",
 		"tags": ["Develop", "ai"]
 	}
 ]
