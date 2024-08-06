@@ -1,5 +1,6 @@
 [
 	{
+		"id": "abc12",
 		"name": "Pokemon",
 		"url": "https://pokemon-support.trocdigital.io/pokemon",
 		"image": "https://front.trocdigital.io/assets/img/programs/pokemon/pokemon-home.png",
@@ -8,6 +9,7 @@
 		"like": true
 	},
 	{
+		"id": "xyz34",
 		"name": "We Support U",
 		"url": "https://weprotectu.trocdigital.io/we_protect_u",
 		"image": "https://front.trocdigital.io/assets/img/programs/we_protect_u/we_protect_u-home.png",
@@ -16,6 +18,7 @@
 		"like": true
 	},
 	{
+		"id": "uvw56",
 		"name": "Navigator v3",
 		"url": "https://navigator-new.dev.trocdigital.io/home",
 		"image": "https://front.trocdigital.io/assets/img/programs/tro_survey/tro_survey-home.png",
@@ -24,6 +27,7 @@
 		"like": true
 	},
 	{
+		"id": "rst78",
 		"name": "Navigator v2",
 		"url": "https://navigator.dev.trocdigital.io/home",
 		"image": "https://front.trocdigital.io/assets/img/programs/tro_survey/tro_survey-home.png",
@@ -31,18 +35,12 @@
 		"tags": ["Develop", "v2"]
 	},
 	{
+		"id": "jyg34",
 		"name": "Chat AI",
 		"url": "https://navai.dev.trocdigital.io/auth",
 		"image": "https://front.trocdigital.io/assets/img/programs/smartjobs/smartjobs-home.png",
 		"icon": "https://front.trocdigital.io/assets/img/programs/smartjobs/icon.png",
 		"tags": ["Develop", "ai"],
 		"like": true
-	},
-	{
-		"name": "Chat AI",
-		"url": "https://navai.dev.trocdigital.io/auth",
-		"image": "https://front.trocdigital.io/assets/img/programs/smartjobs/smartjobs-home.png",
-		"icon": "https://front.trocdigital.io/assets/img/programs/smartjobs/icon.png",
-		"tags": ["Develop", "ai"]
 	}
 ]
