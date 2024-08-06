@@ -3,6 +3,9 @@
 	import { Input } from '$lib/components/ui/input/index.js'
 	import { Label } from '$lib/components/ui/label/index.js'
 	import { enhance } from '$app/forms'
+	import { Eye, EyeOff, Search, SearchCheck } from 'lucide-svelte'
+
+	let showPassword: boolean = false
 
 	const keyDownEnter = (e: any) => {
 		if (e.key === 'Enter') {
@@ -32,7 +35,7 @@
 			</div>
 			<div class="grid gap-4">
 				<form id="form" action="?/login" method="POST" use:enhance>
-					<div class="grid gap-2">
+					<div class="grid gap-1">
 						<Label for="email">Email</Label>
 						<Input
 							type="text"
@@ -44,23 +47,36 @@
 							maxlength={100}
 						/>
 					</div>
-					<div class="grid gap-2">
+					<div class="grid gap-1 mt-2">
 						<div class="flex items-center">
 							<Label for="password">Password</Label>
 							<a href="##" class="ml-auto inline-block text-sm underline">
 								Forgot your password?
 							</a>
 						</div>
-						<Input
-							id="password"
-							type={'password'}
-							class="block w-full  !bg-gray-50 !text-gray-900 !border-gray-300 !text-base rounded"
-							name="password"
-							placeholder="**********"
-							required
-							on:keydown={keyDownEnter}
-							maxlength={100}
-						/>
+						<div class="password-field">
+							<Input
+								id="password"
+								type={showPassword ? 'text' : 'password'}
+								class="block w-full  !bg-gray-50 !text-gray-900 !border-gray-300 !text-base rounded"
+								name="password"
+								placeholder="**********"
+								required
+								on:keydown={keyDownEnter}
+								maxlength={100}
+							/>
+							<button
+								type="button"
+								on:click={() => (showPassword = !showPassword)}
+								class="eye-icon"
+							>
+								{#if showPassword}
+									<EyeOff class="text-muted-foreground" />
+								{:else}
+									<Eye class="text-muted-foreground" />
+								{/if}
+							</button>
+						</div>
 					</div>
 					<Button type="submit" class="w-full mt-4">Login</Button>
 					<Button variant="outline" class="w-full mt-4">Login with Google</Button>
@@ -73,3 +89,16 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.password-field {
+		display: flex;
+		align-items: center;
+	}
+	.eye-icon {
+		background: none;
+		border: none;
+		cursor: pointer;
+		margin-left: -35px; /* Adjust based on your design */
+	}
+</style>

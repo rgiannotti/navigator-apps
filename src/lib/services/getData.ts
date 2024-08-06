@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { page } from '$app/stores'
-// import { storeUser } from '$lib/stores'
-// import { sendErrorNotification } from '$lib/stores/toast'
+import { sendErrorNotification } from '$lib/utils/common/toast'
 import { error } from '@sveltejs/kit'
-import { get } from 'svelte/store'
 
 /**
  * Perform an HTTP request using the fetch API.
@@ -72,10 +69,8 @@ async function _getData(
 
 		if (response?.status === 204) return null
 		if (response?.status === 500) {
-			// const errorMessage = `500 Internal Server Error<br>Server got itself in trouble`
-			// if (showErrorNotification)
-			// 	sendErrorNotification(`Request error: ${response.status}:<br> ${errorMessage}`)
-			throw error(response.status, response.statusText)
+			const errorMessage = `Request error: ${response.status}, Server got itself in trouble`
+			throw error(response.status, errorMessage)
 		}
 		if (response?.status === 401)
 			throw new Error(`Signature Failed or Expired:<br>Signature verification failed`)
@@ -98,8 +93,8 @@ async function _getData(
 					: statusText
 			}
 
-			// if (showErrorNotification)
-			// 	sendErrorNotification(`Request error: ${response.status}:<br>${statusText}`)
+			if (showErrorNotification)
+				sendErrorNotification(`Request error: ${response.status}:<br>${statusText}`)
 			throw error(
 				response.status,
 				`Request error: ${response.status}:<br>${statusText}<div class="api-error hidden mt-2">API URL:<br>${url}</div>`
@@ -107,7 +102,7 @@ async function _getData(
 		}
 		return await response.json()
 	} catch (error) {
-		// if (showErrorNotification) sendErrorNotification(error)
+		if (showErrorNotification) sendErrorNotification(error)
 		console.log(error)
 		throw error
 	}

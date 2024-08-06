@@ -30,8 +30,6 @@
 	import * as Table from '$lib/components/ui/table/index.js'
 	import * as Tabs from '$lib/components/ui/tabs/index.js'
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js'
-	import { auth } from '$lib/stores/auth'
-	import { goto } from '$app/navigation'
 </script>
 
 <div class="bg-muted/40 flex min-h-screen w-full flex-col">

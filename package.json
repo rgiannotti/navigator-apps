@@ -28,6 +28,7 @@
 		"prettier": "^3.3.3",
 		"prettier-plugin-svelte": "^3.2.6",
 		"prettier-plugin-tailwindcss": "^0.6.5",
+		"sass": "^1.77.8",
 		"svelte": "^4.2.18",
 		"svelte-check": "^3.8.5",
 		"tailwindcss": "^3.4.7",
@@ -43,7 +44,9 @@
 		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
 		"lucide-svelte": "^0.424.0",
+		"mode-watcher": "^0.4.1",
 		"svelte-radix": "^1.1.0",
+		"svelte-sonner": "^0.3.27",
 		"tailwind-merge": "^2.4.0",
 		"tailwind-variants": "^0.2.1"
 	}
