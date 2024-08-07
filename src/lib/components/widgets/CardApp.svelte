@@ -123,13 +123,13 @@
           </div>
 
           <div class="w-2/5 h-full flex">
-            <div
-              class="m-auto w-14 h-14 rounded-full bg-black mb-3 mr-3 flex cursor-pointer hover:shadow-md hover:transform hover:scale-105 hover:transition-all duration-300"
-            >
-              <a href="/frame/{app.id}" class="h-6 w-6 text-white m-auto">
+            <a href="/{app.id}" class="h-10 w-10 m-auto">
+              <div
+                class="m-auto w-14 h-14 rounded-full bg-black mb-3 mr-3 flex cursor-pointer hover:shadow-md hover:transform hover:scale-105 hover:transition-all duration-300"
+              >
                 <Send class="h-6 w-6 text-white m-auto" />
-              </a>
-            </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>

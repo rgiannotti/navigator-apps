@@ -115,7 +115,7 @@
           </div>
           <div />
           <a
-            href="/frame/{app.id}"
+            href="/{app.id}"
             class="bg-blue-500 hover:bg-blue-800 text-white rounded-full p-2"
           >
             <Send class="h-4 w-4 " />
@@ -127,7 +127,7 @@
   </ContextMenu.Trigger>
   <ContextMenu.Content class="w-40">
     <ContextMenu.Item>
-      <a href="/frame/{app.id}" target="_blank"> Open </a>
+      <a href="/{app.id}" target="_blank"> Open </a>
     </ContextMenu.Item>
     <ContextMenu.Item><a href={app.url}> Open in tab </a></ContextMenu.Item>
     <ContextMenu.Item>

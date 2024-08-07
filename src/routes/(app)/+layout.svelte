@@ -13,6 +13,19 @@
   import { Button } from "$lib/components/ui/button/index.js";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
   import * as Sheet from "$lib/components/ui/sheet/index.js";
+  import { onMount } from "svelte";
+
+  let data: any;
+
+  const fetchData = async () => {
+    const response = await fetch("/json/apps.json");
+    data = await response.json();
+    data = data.filter((app: any) => app.like);
+  };
+
+  onMount(() => {
+    fetchData();
+  });
 </script>
 
 <div class="bg-muted/40 flex min-h-screen w-full flex-col">
@@ -22,87 +35,62 @@
     <nav class="flex flex-col items-center gap-4 px-2 py-4">
       <a
         href="##"
-        class="bg-primary text-primary-foreground group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full text-lg font-semibold md:h-8 md:w-8 md:text-base"
+        class="bg-primary-foreground border text-primary-foreground group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full text-lg font-semibold md:h-8 md:w-8 md:text-base"
       >
-        <Package2 class="h-4 w-4 transition-all group-hover:scale-110" />
-        <span class="sr-only">Acme Inc</span>
+        <img
+          src="https://navigator-new.dev.trocdigital.io/images/troc.png"
+          width={40}
+          height={40}
+          alt="Avatar"
+          class="overflow-hidden rounded-full"
+        />
       </a>
       <Tooltip.Root>
         <Tooltip.Trigger asChild let:builder>
           <a
-            href="##"
+            href="/home"
             class="text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"
             use:builder.action
             {...builder}
           >
             <Home class="h-5 w-5" />
-            <span class="sr-only">Dashboard</span>
+            <span class="sr-only">Home</span>
           </a>
         </Tooltip.Trigger>
         <Tooltip.Content side="right">Dashboard</Tooltip.Content>
       </Tooltip.Root>
-      <Tooltip.Root>
-        <Tooltip.Trigger asChild let:builder>
-          <a
-            href="##"
-            class="bg-accent text-accent-foreground hover:text-foreground flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"
-            use:builder.action
-            {...builder}
-          >
-            <ShoppingCart class="h-5 w-5" />
-            <span class="sr-only">Orders</span>
-          </a>
-        </Tooltip.Trigger>
-        <Tooltip.Content side="right">Orders</Tooltip.Content>
-      </Tooltip.Root>
-      <Tooltip.Root>
-        <Tooltip.Trigger asChild let:builder>
-          <a
-            href="##"
-            class="text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"
-            use:builder.action
-            {...builder}
-          >
-            <Package class="h-5 w-5" />
-            <span class="sr-only">Products</span>
-          </a>
-        </Tooltip.Trigger>
-        <Tooltip.Content side="right">Products</Tooltip.Content>
-      </Tooltip.Root>
-      <Tooltip.Root>
-        <Tooltip.Trigger asChild let:builder>
-          <a
-            href="##"
-            class="text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"
-            use:builder.action
-            {...builder}
-          >
-            <UsersRound class="h-5 w-5" />
-            <span class="sr-only">Customers</span>
-          </a>
-        </Tooltip.Trigger>
-        <Tooltip.Content side="right">Customers</Tooltip.Content>
-      </Tooltip.Root>
-      <Tooltip.Root>
-        <Tooltip.Trigger asChild let:builder>
-          <a
-            href="##"
-            class="text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"
-            use:builder.action
-            {...builder}
-          >
-            <LineChart class="h-5 w-5" />
-            <span class="sr-only">Analytics</span>
-          </a>
-        </Tooltip.Trigger>
-        <Tooltip.Content side="right">Analytics</Tooltip.Content>
-      </Tooltip.Root>
+      <div class="mt-2 flex flex-col items-center gap-4 px-2 py-4">
+        {#if data}
+          {#each data as app}
+            <Tooltip.Root>
+              <Tooltip.Trigger asChild let:builder>
+                <a
+                  href={`/${app.id}`}
+                  class="bg-accent text-accent-foreground hover:text-foreground flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"
+                  use:builder.action
+                  {...builder}
+                >
+                  <img
+                    src={app.icon}
+                    alt={app.name}
+                    class="h-8 w-8 object-cover"
+                  />
+                  <span class="sr-only">{app.name}</span>
+                </a>
+              </Tooltip.Trigger>
+              <Tooltip.Content side="right">{app.name}</Tooltip.Content>
+            </Tooltip.Root>
+          {/each}
+        {:else}
+          <p>...</p>
+        {/if}
+      </div>
     </nav>
     <nav class="mt-auto flex flex-col items-center gap-4 px-2 py-4">
       <Tooltip.Root>
         <Tooltip.Trigger asChild let:builder>
           <a
-            href="##"
+            href="/settings"
             class="text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"
             use:builder.action
             {...builder}
@@ -166,7 +154,7 @@
               Customers
             </a>
             <a
-              href="##"
+              href="/settings"
               class="text-muted-foreground hover:text-foreground flex items-center gap-4 px-2.5"
             >
               <LineChart class="h-5 w-5" />
