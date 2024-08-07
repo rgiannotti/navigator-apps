@@ -16,8 +16,7 @@
 
 <div
   class="app-card bg-black w-[300px] flex h-[420px] m-auto"
-  style="box-shadow: 1px 1px 10px 1px rgb(255, 255, 255);
-   border: 2px solid white;
+  style="border: 1px solid white;
   border-radius: 55px 55px 55px 65px;
   zoom: 0.9;"
 >
@@ -32,18 +31,18 @@
         <h3 class="text-xl font-semibold">{app.name}</h3>
       </div>
       <div
-        class="m-auto w-18 h-full bg-white mr-0 flex rounded-tl-[45px] rounded-tr-[65px] rounded-br-[0px] rounded-bl-[0px]"
+        class="m-auto w-18 h-full bg-white dark:bg-zinc-900 mr-0 flex rounded-tl-[45px] rounded-tr-[65px] rounded-br-[0px] rounded-bl-[0px]"
       >
         <div class="flex m-auto w-20">
           <div class="flex flex-col w-20 mt-3">
-            <Wallpaper class="h-5 w-5 m-auto" />
+            <Wallpaper class="h-5 w-5 m-auto " />
           </div>
         </div>
       </div>
     </div>
 
     <div
-      class="w-full h-2/5 m-auto bg-white flex flex-col"
+      class="w-full h-2/5 m-auto bg-white dark:bg-zinc-900 flex flex-col"
       style="border-radius: 40px 0px 0px 55px;"
     >
       <div class="flex m-auto w-5/6 h-1/3 pt-5 pb-18">
@@ -54,7 +53,7 @@
       <div class="m-auto pt-6 w-11/12">
         {#each app.tags as tag}
           <button
-            class="app-btn w-auto h-auto p-2 m-1 mb-1 text-sm text-center bg-gray-200 font-semibold rounded-3xl hover:transform hover:scale-105 hover:transition hover:duration-500"
+            class="app-btn w-auto h-auto p-2 m-1 mb-1 text-sm text-center dark:bg-black bg-gray-200 font-semibold rounded-3xl hover:transform hover:scale-105 hover:transition hover:duration-500"
             type="button"
             >{tag}
           </button>
@@ -72,7 +71,9 @@
 
     <div class="w-full h-2/4 flex justify-center m-auto">
       <div class="flex flex-col w-1/5 h-full">
-        <div class="w-18 h-14 bg-white rounded-none m-auto -mt-2 ml-0">
+        <div
+          class="w-18 h-14 bg-white dark:bg-zinc-900 rounded-none m-auto -mt-2 ml-0"
+        >
           <div
             class="w-[60px] h-[60px] bg-black m-auto"
             style="border-radius: 32% 68% 100% 0% / 0% 100% 0% 100%;"
@@ -110,7 +111,7 @@
       </div>
 
       <div
-        class="w-4/5 bg-white mr-0 flex flex-col"
+        class="w-4/5 bg-white dark:bg-zinc-900 mr-0 flex flex-col"
         style="border-radius: 0px 0px 50px 40px;"
       >
         <div class="m-auto w-full h-3/5 flex mb-0">

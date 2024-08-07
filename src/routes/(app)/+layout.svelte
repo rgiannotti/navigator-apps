@@ -14,6 +14,7 @@
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
   import * as Sheet from "$lib/components/ui/sheet/index.js";
   import { onMount } from "svelte";
+  import DarkMode from "$lib/components/utils/DarkMode.svelte";
 
   let data: any;
 
@@ -87,6 +88,20 @@
       </div>
     </nav>
     <nav class="mt-auto flex flex-col items-center gap-4 px-2 py-4">
+      <Tooltip.Root>
+        <Tooltip.Trigger asChild let:builder>
+          <div
+            class="text-muted-foreground hover:text-foreground flex h-9 w-9 items-center justify-center rounded-lg transition-colors md:h-8 md:w-8"
+            use:builder.action
+            {...builder}
+          >
+            <DarkMode />
+            <span class="sr-only">Dark Mode</span>
+          </div>
+        </Tooltip.Trigger>
+        <Tooltip.Content side="right">Dark Mode</Tooltip.Content>
+      </Tooltip.Root>
+
       <Tooltip.Root>
         <Tooltip.Trigger asChild let:builder>
           <a
