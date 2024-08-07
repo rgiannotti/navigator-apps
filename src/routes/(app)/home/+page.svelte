@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as Tabs from "$lib/components/ui/tabs/index.js";
   import CardApp from "$lib/components/widgets/CardApp.svelte";
+  import TableApp from "$lib/components/widgets/TableApp.svelte";
   import { onMount } from "svelte";
 
   let data: any;
@@ -20,13 +21,12 @@
     <div
       class="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4"
     />
-    <Tabs.Root value="week">
-      <div class="flex items-center">
-        <!-- <Tabs.List>
-              <Tabs.Trigger value="week">Week</Tabs.Trigger>
-              <Tabs.Trigger value="month">Month</Tabs.Trigger>
-              <Tabs.Trigger value="year">Year</Tabs.Trigger>
-            </Tabs.List> -->
+    <Tabs.Root value="cards">
+      <div class="flex items-center mb-6">
+        <Tabs.List>
+          <Tabs.Trigger value="cards">Cards</Tabs.Trigger>
+          <Tabs.Trigger value="list">List</Tabs.Trigger>
+        </Tabs.List>
         <div class="ml-auto flex items-center gap-2">
           <!-- <DropdownMenu.Root>
                 <DropdownMenu.Trigger asChild let:builder>
@@ -58,7 +58,7 @@
               </Button> -->
         </div>
       </div>
-      <Tabs.Content value="week">
+      <Tabs.Content value="cards">
         <!-- <div class="flex items-center justify-between">
               <div class="space-y-1">
                 <h2 class="text-2xl font-semibold tracking-tight">
@@ -84,7 +84,11 @@
           </div>
         </div>
       </Tabs.Content>
-      <Tabs.Content value="month" />
+      <Tabs.Content value="list">
+        {#if data}
+          <TableApp {data} />
+        {/if}
+      </Tabs.Content>
     </Tabs.Root>
   </div>
 </main>
