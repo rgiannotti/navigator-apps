@@ -73,7 +73,7 @@
         <div class="relative">
           <div class="flex space-x-4 pb-4">
             {#if data}
-              <div class="w-full grid gap-4 md:grid-cols-2 lg:grid-cols-6">
+              <div class="w-full grid gap-4 md:grid-cols-2 lg:grid-cols-5">
                 {#each data as app}
                   <CardApp {app} />
                 {/each}

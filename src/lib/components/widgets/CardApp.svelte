@@ -1,149 +1,138 @@
 <script lang="ts">
-  import * as Card from "$lib/components/ui/card/index";
-  import { Progress } from "$lib/components/ui/progress/index.js";
-  import { Badge } from "$lib/components/ui/badge/index.js";
-  import { Send } from "lucide-svelte";
-
-  import * as ContextMenu from "$lib/components/ui/context-menu/index.js";
-  import { cn } from "$lib/utils.js";
+  import {
+    Send,
+    Heart,
+    ExternalLink,
+    Forward,
+    Wallpaper,
+    HeartOff,
+  } from "lucide-svelte";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
-  import { Heart } from "lucide-svelte";
-
-  let className: string | undefined | null = undefined;
-  export { className as class };
 
   export let app: any;
-  let like = false;
+
+  let like = true;
 </script>
 
-<!-- <div class="w-[250px]">
-  <a href={app.url}>
-  <Card.Root
-    class="h-auto w-auto object-cover transition-all hover:scale-105 aspect-square"
+<div
+  class="app-card bg-black w-[300px] flex h-[420px] m-auto"
+  style="box-shadow: 1px 1px 10px 1px rgb(255, 255, 255);
+   border: 2px solid white;
+  border-radius: 55px 55px 55px 65px;
+  zoom: 0.9;"
+>
+  <div
+    class="bg-black h-[97%] w-[97%] flex flex-col m-auto"
+    style="border-radius: 55px;"
   >
-    <ContextMenu.Root>
-      <ContextMenu.Trigger>
-        <div class={cn("space-y-3", className)} {...$$restProps}>
-          <div
-            class="overflow-hidden rounded-md h-56 flex items-center justify-center"
-          >
-            <img
-              class="h-auto w-auto object-cover transition-all hover:scale-105 aspect-square"
-              src={app.image}
-              alt={app.name}
-            />
-          </div>
-        </div>
-
-        <Card.Content class="pb-2">
-          <div class=" flex flex-row items-center justify-between">
-            <Card.Title>{app.name}</Card.Title>
-            <Heart class="h-4 w-4" />
-          </div>
-
-          {#each app.tags as tag}
-            <Badge class="my-1 mr-1" variant="secondary">{tag}</Badge>
-          {/each}
-        </Card.Content>
-        <Card.Footer>
-          <Progress value={100} />
-        </Card.Footer>
-      </ContextMenu.Trigger>
-      <ContextMenu.Content class="w-40">
-        <ContextMenu.Item><a href={app.url}> Open </a></ContextMenu.Item>
-        <ContextMenu.Item>
-          <a href={app.url} target="_blank"> Open in new tab </a>
-        </ContextMenu.Item>
-
-        <Dialog.Root>
-          <Dialog.Trigger>Open in iframe</Dialog.Trigger>
-
-          <Dialog.Content class="sm:max-w-6xl h-5/6 inline">
-            <Dialog.Header>
-              <Dialog.Title class="h-6">{app.name}</Dialog.Title>
-            </Dialog.Header>
-            <div class="w-full h-full">
-              <iframe class="w-full h-full" title={app.name} src={app.url} />
-            </div>
-          </Dialog.Content>
-        </Dialog.Root>
-      </ContextMenu.Content>
-    </ContextMenu.Root>
-  </Card.Root>
-  </a>
-</div> -->
-
-<ContextMenu.Root>
-  <ContextMenu.Trigger>
-    <div
-      class="w-auto bg-card rounded-lg shadow-lg overflow-hidden transition-all hover:scale-105"
-    >
-      <div class="relative">
-        <img
-          src={app.image}
-          alt={app.name}
-          class="w-full h-48 object-cover transition-all hover:scale-110"
-        />
-        <div class="absolute top-4 left-4 flex items-center space-x-2">
-          <!-- <img
-        src="https://placehold.co/40x40"
-        alt="Profile"
-        class="rounded-full border-2 border-white"
-      /> 
-       <div class="text-white">
-        <h2 class="font-semibold">Lynn Chang</h2>
-        <p class="text-muted-foreground">@lynnchang_415</p>
-      </div> -->
-        </div>
-        <button
-          class={cn(
-            "absolute top-4 right-4  rounded-full p-2 transition-all ",
-            like ? "bg-red-500 text-white" : "bg-red-50 text-gray-800"
-          )}
-          on:click={() => (like = !like)}
-        >
-          <Heart class="h-4 w-4 " />
-        </button>
+    <div class="w-full h-[10%] flex m-auto">
+      <div
+        class="w-[50%] h-full m-auto flex items-end justify-center text-white"
+      >
+        <h3 class="text-xl font-semibold">{app.name}</h3>
       </div>
-      <div class="p-4">
-        <h3 class="text-lg font-semibold">{app.name}</h3>
-        <div class="flex justify-between items-center mt-4">
-          <div>
-            {#each app.tags as tag}
-              <Badge class="mr-1" variant="secondary">{tag}</Badge>
-            {/each}
+      <div
+        class="m-auto w-18 h-full bg-white mr-0 flex rounded-tl-[45px] rounded-tr-[65px] rounded-br-[0px] rounded-bl-[0px]"
+      >
+        <div class="flex m-auto w-20">
+          <div class="flex flex-col w-20 mt-3">
+            <Wallpaper class="h-5 w-5 m-auto" />
           </div>
-          <div />
-          <a
-            href="/frame/{app.id}"
-            class="bg-blue-500 hover:bg-blue-800 text-white rounded-full p-2"
-          >
-            <Send class="h-4 w-4 " />
-          </a>
         </div>
       </div>
     </div>
-  </ContextMenu.Trigger>
-  <ContextMenu.Content class="w-40">
-    <ContextMenu.Item>
-      <a href="/frame/{app.id}" target="_blank"> Open </a>
-    </ContextMenu.Item>
-    <ContextMenu.Item><a href={app.url}> Open in tab </a></ContextMenu.Item>
-    <ContextMenu.Item>
-      <a href={app.url} target="_blank"> Open in new tab </a>
-    </ContextMenu.Item>
 
-    <!-- <Dialog.Root>
-      <Dialog.Trigger>Open in iframe</Dialog.Trigger>
+    <div
+      class="w-full h-2/5 m-auto bg-white flex flex-col"
+      style="border-radius: 40px 0px 0px 55px;"
+    >
+      <div class="flex m-auto w-5/6 h-1/3 pt-5 pb-18">
+        <p class="text-sm font-medium text-gray-500">
+          {app.description}
+        </p>
+      </div>
+      <div class="m-auto pt-6 w-11/12">
+        {#each app.tags as tag}
+          <button
+            class="app-btn w-auto h-auto p-2 m-1 mb-1 text-sm text-center bg-gray-200 font-semibold rounded-3xl hover:transform hover:scale-105 hover:transition hover:duration-500"
+            type="button"
+            >{tag}
+          </button>
+        {/each}
+      </div>
 
-      <Dialog.Content class="sm:max-w-6xl h-5/6 inline">
-        <Dialog.Header>
-          <Dialog.Title class="h-6">{app.name}</Dialog.Title>
-        </Dialog.Header>
-        <div class="w-full h-full">
-          <iframe class="w-full h-full" title={app.name} src={app.url} />
+      <div class="flex m-auto w-5/6 h-2/5 justify-end items-start">
+        <img
+          class="app-img-animate absolute w-36 h-36 -mt-5 mr-0"
+          src={app.icon}
+          alt={app.name}
+        />
+      </div>
+    </div>
+
+    <div class="w-full h-2/4 flex justify-center m-auto">
+      <div class="flex flex-col w-1/5 h-full">
+        <div class="w-18 h-14 bg-white rounded-none m-auto -mt-2 ml-0">
+          <div
+            class="w-[60px] h-[60px] bg-black m-auto"
+            style="border-radius: 32% 68% 100% 0% / 0% 100% 0% 100%;"
+          />
         </div>
-      </Dialog.Content>
-    </Dialog.Root> -->
-  </ContextMenu.Content>
-</ContextMenu.Root>
+
+        <div class="m-auto w-full h-3/5 flex flex-col -mt-14">
+          <button on:click={() => (like = !like)} class="pb-5">
+            {#if like}
+              <Heart class="h-5 w-5 text-red-500 m-auto" />
+            {:else}
+              <HeartOff class="h-5 w-5 text-white m-auto" />
+            {/if}
+          </button>
+          <a href={app.url} target="_blank" class="pb-5">
+            <Forward class="h-5 w-5 text-white m-auto" />
+          </a>
+          <Dialog.Root>
+            <Dialog.Trigger>
+              <button class="pb-5">
+                <ExternalLink class="h-5 w-5 text-white m-auto" />
+              </button>
+            </Dialog.Trigger>
+
+            <Dialog.Content class="sm:max-w-6xl h-5/6 inline">
+              <Dialog.Header>
+                <Dialog.Title class="h-6">{app.name}</Dialog.Title>
+              </Dialog.Header>
+              <div class="w-full h-full">
+                <iframe class="w-full h-full" title={app.name} src={app.url} />
+              </div>
+            </Dialog.Content>
+          </Dialog.Root>
+        </div>
+      </div>
+
+      <div
+        class="w-4/5 bg-white mr-0 flex flex-col"
+        style="border-radius: 0px 0px 50px 40px;"
+      >
+        <div class="m-auto w-full h-3/5 flex mb-0">
+          <div class=" w-3/5 h-full flex">
+            <div class="m-auto flex flex-col w-full h-full mb-0 font-bold">
+              <h6 class="m-auto mb-0 mr-2">Available</h6>
+              <p class="m-auto mr-1 mt-0" />
+            </div>
+            <span class="w-2/4" />
+          </div>
+
+          <div class="w-2/5 h-full flex">
+            <div
+              class="m-auto w-14 h-14 rounded-full bg-black mb-3 mr-3 flex cursor-pointer hover:shadow-md hover:transform hover:scale-105 hover:transition-all duration-300"
+            >
+              <a href="/frame/{app.id}" class="h-6 w-6 text-white m-auto">
+                <Send class="h-6 w-6 text-white m-auto" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

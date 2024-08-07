@@ -6,7 +6,8 @@
 		"image": "https://front.trocdigital.io/assets/img/programs/pokemon/pokemon-home.png",
 		"icon": "https://front.trocdigital.io/assets/img/programs/pokemon/icon.png",
 		"tags": ["Production", "v3"],
-		"like": true
+		"like": true,
+		"description": "A comprehensive platform dedicated to Pokemon enthusiasts, featuring support and community tools."
 	},
 	{
 		"id": "xyz34",
@@ -15,7 +16,8 @@
 		"image": "https://front.trocdigital.io/assets/img/programs/we_protect_u/we_protect_u-home.png",
 		"icon": "https://front.trocdigital.io/assets/img/programs/we_protect_u/icon.png",
 		"tags": ["Production", "v3"],
-		"like": true
+		"like": true,
+		"description": "A platform designed to provide protection and support for individuals, with various resources and tools."
 	},
 	{
 		"id": "uvw56",
@@ -24,7 +26,8 @@
 		"image": "https://front.trocdigital.io/assets/img/programs/tro_survey/tro_survey-home.png",
 		"icon": "https://front.trocdigital.io/assets/img/programs/tro_survey/icon.png",
 		"tags": ["Develop", "v3"],
-		"like": true
+		"like": true,
+		"description": "An advanced navigation tool offering a range of functionalities for development and testing purposes."
 	},
 	{
 		"id": "rst78",
@@ -32,7 +35,8 @@
 		"url": "https://navigator.dev.trocdigital.io/home",
 		"image": "https://front.trocdigital.io/assets/img/programs/tro_survey/tro_survey-home.png",
 		"icon": "https://front.trocdigital.io/assets/img/programs/tro_survey/icon.png",
-		"tags": ["Develop", "v2"]
+		"tags": ["Develop", "v2"],
+		"description": "An earlier version of the Navigator tool, providing essential navigation features for development and testing."
 	},
 	{
 		"id": "jyg34",
@@ -40,7 +44,8 @@
 		"url": "https://navai.dev.trocdigital.io/auth",
 		"image": "https://front.trocdigital.io/assets/img/programs/smartjobs/smartjobs-home.png",
 		"icon": "https://front.trocdigital.io/assets/img/programs/smartjobs/icon.png",
-		"tags": ["Develop", "ai"],
-		"like": true
+		"tags": ["Develop", "AI"],
+		"like": true,
+		"description": "An AI-powered chat application designed for interactive and intelligent communication."
 	}
 ]

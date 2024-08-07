@@ -1,6 +1,7 @@
 @import '../static/scss/base.css';
 
 @import '../static/scss/toast/toast.css';
+@import '../static/scss/toast/general.css';
 
 @layer base {
 	:root {
