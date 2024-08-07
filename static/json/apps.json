@@ -2,10 +2,10 @@
 	{
 		"id": "abc12",
 		"name": "Pokemon",
-		"url": "https://pokemon-support.trocdigital.io/pokemon",
+		"url": "https://navigator-new.staging.trocdigital.io/login/callback?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE3MjMyNDIwODguNjcwNDk3LCJpYXQiOjE3MjI4ODIwODgsImlzcyI6Ik1vYmlsZWluc2lnaHQiLCJ1c2VyIjoxNTc3OSwidXNlcm5hbWUiOiJqbWVuZG96YTFAdHJvY2dsb2JhbC5jb20iLCJ1c2VyX2lkIjoxNTc3OSwiaWQiOiJqbWVuZG96YTFAdHJvY2dsb2JhbC5jb20iLCJzZXNzaW9uX2lkIjoiOTc5NDdkYmM4MGNlNGY5NTk2NDIzZDU0ZjMyOGIyMGQifQ.HbSqT-bEFcm5G7sl2b79fQanhU83uie_GecB46-aBBA&next=share/dashboard/78005ca2-0852-4ea7-b0c4-846447cda84f",
 		"image": "https://front.trocdigital.io/assets/img/programs/pokemon/pokemon-home.png",
 		"icon": "https://front.trocdigital.io/assets/img/programs/pokemon/icon.png",
-		"tags": ["Production", "v3"],
+		"tags": ["Staging", "v3"],
 		"like": true,
 		"description": "A comprehensive platform dedicated to Pokemon enthusiasts, featuring support and community tools."
 	},
