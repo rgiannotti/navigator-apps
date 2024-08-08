@@ -31,6 +31,7 @@
 <main class="grid w-full h-screen">
 	{#if app}
 		{#key app.id}
+			<!-- <iframe class="w-full h-full" title={app.name} src={`/${data.id}/proxy`} /> -->
 			<iframe class="w-full h-full" title={app.name} src={url} />
 		{/key}
 	{:else}

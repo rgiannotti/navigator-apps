@@ -47,5 +47,25 @@
 		"tags": ["Develop", "AI"],
 		"like": true,
 		"description": "An AI-powered chat application designed for interactive and intelligent communication."
+	},
+	{
+		"id": "juug34",
+		"name": "JupyterNotebook",
+		"url": "https://jupyter.internal-dev.trocdigital.io",
+		"image": "https://cdn.icon-icons.com/icons2/2667/PNG/512/jupyter_app_icon_161280.png",
+		"icon": "https://cdn.icon-icons.com/icons2/2667/PNG/512/jupyter_app_icon_161280.png",
+		"tags": ["Notes"],
+		"like": true,
+		"description": "An Notes application designed for interactive and intelligent communication."
+	},
+	{
+		"id": "123eq",
+		"name": "Superset",
+		"url": "https://analytics.internal-dev.trocdigital.io",
+		"image": "https://avatars.githubusercontent.com/u/42724554?s=280&v=4",
+		"icon": "https://avatars.githubusercontent.com/u/42724554?s=280&v=4",
+		"tags": ["Superset"],
+		"like": true,
+		"description": "An Superset application designed for interactive and intelligent communication."
 	}
 ]
